@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+</head>
+<style>
+    table{
+        margin-top:50px;
+        margin-left: 50px;
+    }
+</style>
+<body>
+    <%if(UserData.length>0){%>
+        <table border=1>
+            <tr>
+                <th>Email</th>
+                <th>Key</th>
+                <th>is_admin</th>
+            </tr>
+            
+        <%for(i=0;i<UserData.length;i++){%> 
+            <tr>
+                <td><%=UserData[i].email%></td>
+                <td><%=UserData[i].key%></td>
+                <td><%=UserData[i].is_admin%></td>
+                <td><a href="delete?id=<%=UserData[i]._id%>">Delete</a></td>
+                    <%}}else{%>
+                        No Premium users found !<%}%>
+                        <a href='admin/add'><button>Add User</button></a>
+                        <% if(typeof msg !='undefined' ){ %>
+                            <h5 style="color: red;">
+                                <%=msg%>
+                            </h5>
+                            <% }%>
+</body>
+
+</html>
