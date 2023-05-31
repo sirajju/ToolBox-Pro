@@ -8,10 +8,10 @@ adminRoute.set('views',path.join(__dirname,'../views/admin'));
 
 adminRoute.get('/',adminController.adminHome);
 adminRoute.get('/add',adminController.addUserLoad);
+adminRoute.get('/delete?',adminController.deleteUser);
 
 adminRoute.post('/',adminController.loadAdmin);
 adminRoute.post('/add',adminController.saveUser);
-adminRoute.post('/delete',adminController.deleteUser);
 
 
 module.exports = adminRoute

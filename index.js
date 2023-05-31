@@ -27,7 +27,7 @@ app.use(express.static('public/admin'));
 app.use('/',userRoute);
 app.use('/admin',adminRoute);
 // const port = Math.floor(Math.random() * 9000);
-const port =process.env.port
+const port =3000
 app.listen(port,()=>{
     console.log("Started on http://localhost:"+port);
     // console.log('http://localhost:'+port+'/send?to=munnas2aa@gmail.com&message=last&user=munns2aa@gmail.com')

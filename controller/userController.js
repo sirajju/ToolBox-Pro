@@ -78,9 +78,7 @@ const sendOtp = async (req, res) => {
 
         transporter.sendMail(options, function (error, info) {
             if (error) {
-                if (error.name = 'Error') {
                     res.render('otpPage', { msg: "Something went wrong!!" })
-                }
             } else {
                 res.render('otpPage', { msg: "Please check your inbox to get otp" })
                 console.log('mail send')
